@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+      	<meta name="description" content="">
+      	<meta name="author" content="">
+        <title>Training plan - mobile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/swiper.css"/>
+
+        <style>
+            .swiper-container {
+                width: 100%;
+                /*height: 100%;*/
+            }
+            .swiper-slide {
+                overflow-y:scroll;
+                overflow-x:hidden;
+            }
+        </style>
+
+        <link rel="manifest" href="/manifest.json">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div class="back_button"></div>
+                <div class="header_title">Training plan</div>
+                <button id="openMenuButton" class="menu_button">
+                    <svg id="i-menu" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+                    </svg>
+                </button>
+            </div>
+            <div class="content">
+                <div class="plan_info">
+                    <div class="distance_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="14px" height="20px" version="1.1" viewBox="0 0 0.13 0.19"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+                         <defs>
+                          <style type="text/css">
+                           <![CDATA[
+                            .fil0 {fill:#7DAC3E;fill-rule:nonzero}
+                           ]]>
+                          </style>
+                         </defs>
+                         <g id="Layer_x0020_1">
+                          <metadata id="CorelCorpID_0Corel-Layer"/>
+                          <path class="fil0" d="M0.07 0c0.03,0 0.06,0.03 0.06,0.07 0,0.01 0,0.02 -0.01,0.03l-0.05 0.09 -0.06 -0.09c-0.01,-0.01 -0.01,-0.02 -0.01,-0.03 0,-0.04 0.03,-0.07 0.07,-0.07zm0 0.03c-0.02,0 -0.04,0.02 -0.04,0.04 0,0.02 0.02,0.03 0.04,0.03 0.02,0 0.03,-0.01 0.03,-0.03 0,-0.02 -0.01,-0.04 -0.03,-0.04z"/>
+                         </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <p>Goal:</p>
+                        <p id="goal_placeholder"></p>
+                    </div>
+                    <div class="time_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="20px" height="20px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+            viewBox="0 0 0.26 0.26"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+             <defs>
+              <style type="text/css">
+               <![CDATA[
+                .str0 {stroke:#35AEE1;stroke-width:0.02;stroke-miterlimit:22.9256}
+               .fil1 {fill:none}
+               ]]>
+              </style>
+             </defs>
+             <g id="Layer_x0020_1">
+              <metadata id="CorelCorpID_0Corel-Layer"/>
+              <g id="_2370638916816">
+               <circle class="fil1 str0" cx="0.13" cy="0.13" r="0.12"/>
+               <polyline class="fil1 str0" points="0.12,0.06 0.11,0.13 0.18,0.16 "/>
+              </g>
+             </g>
+            </svg>
+                    </div>
+                    <div>
+                        <p>Time:</p>
+                        <p id="time_placeholder"></p>
+                    </div>
+                </div>
+
+                <div id="weeks">
+                    <!--<div class="week_item">-->
+                        <!--<div class="week_mark"></div>-->
+                        <!--<div class="week_number">1</div>-->
+                    <!--</div>-->
+                    <!--<div class="week_item current selected">-->
+                        <!--<div class="week_mark"></div>-->
+                        <!--<div class="week_number">2</div>-->
+                    <!--</div>-->
+                    <!--<div class="week_item pending">-->
+                        <!--<div class="week_mark"></div>-->
+                        <!--<div class="week_number">3</div>-->
+                    <!--</div>-->
+                    <!--<div class="week_item pending">-->
+                        <!--<div class="week_mark"></div>-->
+                        <!--<div class="week_number">4</div>-->
+                    <!--</div>-->
+                </div>
+
+                <!--<div class="weeks_text">-->
+                    <!--<span>WEEK&nbsp;2</span>-->
+                    <!--<span class="selected_week">WEEK&nbsp;3</span>-->
+                    <!--<span>WEEK&nbsp;4</span>-->
+                <!--</div>-->
+
+                <div class="swiper-container">
+                    <div id="days_wrapper" class="swiper-wrapper">
+                        <!--<div class="swiper-slide">-->
+                            <!--<section class="days">-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">24.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">RUN 2 ml</span>-->
+                                    <!--<span class="day_status_text">Current</span>-->
+                                    <!--<span class="day_description">Today, kick off this week of training with ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">25.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">26.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">20.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Skipped</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">21.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Done on 20.05.2015</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">22.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Done</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                            <!--</section>-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<section class="days">-->
+                                <!--<div class="day current">-->
+                                    <!--<span class="day_date">24.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">RUN 2 ml</span>-->
+                                    <!--<span class="day_status_text">Current</span>-->
+                                    <!--<span class="day_description">Today, kick off this week of training with ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">25.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">26.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">20.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Skipped</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">21.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Done on 20.05.2015</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day done">-->
+                                    <!--<span class="day_date">22.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Done</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                            <!--</section>-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<section class="days">-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">24.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">RUN 2 ml</span>-->
+                                    <!--<span class="day_status_text">Current</span>-->
+                                    <!--<span class="day_description">Today, kick off this week of training with ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">25.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">26.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">20.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Skipped</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">21.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Done on 20.05.2015</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">22.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Done</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                            <!--</section>-->
+                        <!--</div>-->
+                        <!--<div class="swiper-slide">-->
+                            <!--<section class="days">-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">24.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">RUN 2 ml</span>-->
+                                    <!--<span class="day_status_text">Current</span>-->
+                                    <!--<span class="day_description">Today, kick off this week of training with ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">25.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">26.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Pending</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">20.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Skipped</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">21.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">REST</span>-->
+                                    <!--<span class="day_status_text">Done on 20.05.2015</span>-->
+                                    <!--<span class="day_description">As your body adjust to your new training ...</span>-->
+                                <!--</div>-->
+                                <!--<div class="day pending">-->
+                                    <!--<span class="day_date">22.05.2015</span>-->
+                                    <!--<div class="day_mark"><div class="circle"></div></div>-->
+                                    <!--<span class="day_title">WALK 5 ml</span>-->
+                                    <!--<span class="day_status_text">Done</span>-->
+                                    <!--<span class="day_description">Keep your warm-up week going with another ...</span>-->
+                                <!--</div>-->
+                            <!--</section>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+                <button class="start_button">START</button>
+            </div>
+            <div class="footer">
+            </div>
+
+            <div id="left_panel" class="">
+                <button id="closeMenuButton" class="close_button">
+                    <svg id="i-menu" viewBox="0 0 26 26" width="26" height="26" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M1 1 L16 16 M1 16 L16 1" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <script src="js/swiper.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
