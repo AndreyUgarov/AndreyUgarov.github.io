@@ -49,7 +49,6 @@
                           </style>
                          </defs>
                          <g>
-                          <metadata id="CorelCorpID_0Corel-Layer"/>
                           <path class="fil0" d="M0.07 0c0.03,0 0.06,0.03 0.06,0.07 0,0.01 0,0.02 -0.01,0.03l-0.05 0.09 -0.06 -0.09c-0.01,-0.01 -0.01,-0.02 -0.01,-0.03 0,-0.04 0.03,-0.07 0.07,-0.07zm0 0.03c-0.02,0 -0.04,0.02 -0.04,0.04 0,0.02 0.02,0.03 0.04,0.03 0.02,0 0.03,-0.01 0.03,-0.03 0,-0.02 -0.01,-0.04 -0.03,-0.04z"/>
                          </g>
                         </svg>
@@ -71,11 +70,8 @@
               </style>
              </defs>
              <g>
-              <metadata id="CorelCorpID_0Corel-Layer"/>
-              <g>
                <circle class="fil1 str0" cx="0.13" cy="0.13" r="0.12"/>
                <polyline class="fil1 str0" points="0.12,0.06 0.11,0.13 0.18,0.16 "/>
-              </g>
              </g>
             </svg>
                     </div>
@@ -315,5 +311,17 @@
 
         <script src="js/swiper.js"></script>
         <script src="js/script.js"></script>
+
+        <script>
+           if ('serviceWorker' in navigator) {
+              console.log("Will the service worker register?");
+              navigator.serviceWorker.register('service-worker.js')
+                 .then(function(reg) {
+                    console.log("Yes, it did.");
+                 }).catch(function(err) {
+                    console.log("No it didn't. This happened: ", err)
+              });
+           }
+        </script>
     </body>
 </html>
