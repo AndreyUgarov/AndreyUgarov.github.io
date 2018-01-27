@@ -5,7 +5,7 @@ var filesToCache = [
    '/css/styles.css',
    '/css/swiper.css',
    '/js/script.js',
-   '/js/swiper.js'
+   '/js/swiper.min.js'
 ];
 
 self.addEventListener('install', function(e) {
